@@ -1,0 +1,11 @@
+﻿<iedit:FigureLineBase x:Class="iEditSL.Figures.FigurePolyline"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:iedit="clr-namespace:iEditSL.Figures"
+    Width="{Binding Width, Mode=TwoWay}" Height="{Binding Height, Mode=TwoWay}"
+    Canvas.Left="{Binding Left, Mode=TwoWay}" Canvas.Top="{Binding Top, Mode=TwoWay}"
+    >
+    <Grid x:Name="LayoutRoot">
+        <Polyline x:Name="LinkPolyLine" Stroke="Black" Points="0,10 30,10 50,-5"/>
+    </Grid>
+</iedit:FigureLineBase>

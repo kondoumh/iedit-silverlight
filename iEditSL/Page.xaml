@@ -1,0 +1,353 @@
+﻿<UserControl x:Class="iEditSL.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:swc="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:sw="clr-namespace:System.Windows;assembly=System.Windows.Controls"
+    xmlns:iedit="clr-namespace:iEditSL"
+    Width="800" Height="600">
+    <UserControl.Resources>
+        <sw:HierarchicalDataTemplate ItemsSource="{Binding SubNodes}" x:Key="OutlienViewTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Ellipse Canvas.Left="0" Canvas.Top="0" Height="10" Width="10"
+                         StrokeThickness="0"
+                         Margin="0 0 3 0">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="white" Offset="0" />
+                            <GradientStop Color="Blue" Offset="1.5" />
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <TextBlock Text="{Binding Name}"/>
+            </StackPanel>
+        </sw:HierarchicalDataTemplate>
+        <iedit:EnumConverter x:Key="enumConverter"/>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="AliceBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="ToolBar" Grid.Row="0" Background="Lavender" Orientation="Horizontal">
+            <Button x:Name="ButtonOpenFile"
+                    ToolTipService.ToolTip="開く">
+                <Canvas Width="21" Height="20">
+                    <Canvas.Children>
+                        <Polyline Stroke="DarkBlue"
+                              Points="7,1 5,4 5,17 19,17 19,4 15,4 13,1 7,1">
+                            <Polyline.Fill>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                    <GradientStop Color="Azure" Offset="0.0" />
+                                    <GradientStop Color="IndianRed" Offset="2.5" />
+                                </LinearGradientBrush>
+                            </Polyline.Fill>
+                        </Polyline>
+                        <Polyline Stroke="DarkBlue"
+                              Points="1,8 5,17 19,17 15,8 1,8">
+                            <Polyline.Fill>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                    <GradientStop Color="Azure" Offset="0.0" />
+                                    <GradientStop Color="IndianRed" Offset="2.5" />
+                                </LinearGradientBrush>
+                            </Polyline.Fill>
+                        </Polyline>
+                    </Canvas.Children>
+                </Canvas>
+            </Button>
+            <Button x:Name="ButtonSaveFile"
+                    Margin="0 0 0 0"
+                    ToolTipService.ToolTip="保存">
+                <Canvas Width="21" Height="20">
+                    <Canvas.Children>
+                        <Rectangle Stroke="DarkBlue"
+                                   StrokeThickness="1"
+                                   Canvas.Left="3"
+                                   Canvas.Top="3"
+                                   Width="16"
+                                   Height="16" >
+                            <Rectangle.Fill>
+                                <LinearGradientBrush StartPoint="1,1" EndPoint="0,1">
+                                    <GradientStop Color="DarkBlue" Offset="0.0" />
+                                    <GradientStop Color="Azure" Offset="1.5" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <Rectangle Stroke="DarkBlue"
+                                   StrokeThickness="1"
+                                   Canvas.Left="5"
+                                   Canvas.Top="4"
+                                   Width="12"
+                                   Height="8" >
+                            <Rectangle.Fill>
+                                <LinearGradientBrush StartPoint="1,1" EndPoint="0,1">
+                                    <GradientStop Color="LightBlue" Offset="0.0" />
+                                    <GradientStop Color="White" Offset="0.7" />
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </Canvas.Children>
+                </Canvas>
+            </Button>
+            <Button x:Name="ButtonSaveToPng"
+                    Margin="0 0 5 0"
+                    ToolTipService.ToolTip="ネットワーク図をPNG形式で保存">
+                <Canvas Width="21" Height="20">
+                    <Rectangle Height="17" Width="18" Stroke="Gray" Margin="2" Fill="Wheat"/>
+                    <Rectangle Height="6" Width="9" Canvas.Left="4" Canvas.Top="5" Stroke="Gray" Fill="Red"/>
+                    <Rectangle Height="6" Width="9" Canvas.Left="7" Canvas.Top="9" Stroke="Gray" Fill="Yellow"/>
+                    <Ellipse Height="6" Width="9" Canvas.Left="9" Canvas.Top="12" Stroke="Gray" Fill="Blue"/>
+                </Canvas>
+            </Button>
+            <Button x:Name="ButtonAddSubNode"
+                    ToolTipService.ToolTip="下の階層に追加">
+                <Polyline Stroke="DarkBlue"
+                          Points="3,2 3,6 7,6 7,15 19,15 19,11 9,11 9,6 15,6 15,2 3,2">
+                    <Polyline.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="Azure" Offset="0.0" />
+                            <GradientStop Color="Red" Offset="2.5" />
+                        </LinearGradientBrush>
+                    </Polyline.Fill>
+                </Polyline>
+            </Button>
+            <Button x:Name="ButtonAddSiblingNode"
+                    ToolTipService.ToolTip="同一階層に追加">
+                <Polyline Stroke="DarkBlue"
+                          Points="3,2 3,15 15,15 15,11 5,11 5,6 15,6 15,2 3,2">
+                    <Polyline.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="Azure" Offset="0.0" />
+                            <GradientStop Color="Red" Offset="2.5" />
+                        </LinearGradientBrush>
+                    </Polyline.Fill>
+                </Polyline>
+            </Button>
+            <Button x:Name="ButtonLevelUp"
+                    ToolTipService.ToolTip="レベルを上げる">
+                <Polyline StrokeThickness="0"
+                          Points="2,7.5 9,15 9,11 17,11 17,5 9,5 9,0">
+                    <Polyline.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="Cyan" Offset="0.7" />
+                            <GradientStop Color="Blue" Offset="0.0" />
+                        </LinearGradientBrush>
+                    </Polyline.Fill>
+                </Polyline>
+            </Button>
+            <Button x:Name="ButtonLevelDown"
+                    ToolTipService.ToolTip="レベルを下げる">
+                <Polyline StrokeThickness="0"
+                          Points="2,4 2,11 10,11 10,15 17,7.5 10,0 10,4">
+                    <Polyline.Fill>
+                        <LinearGradientBrush StartPoint="1,0" EndPoint="0,0">
+                            <GradientStop Color="Cyan" Offset="0.7" />
+                            <GradientStop Color="Blue" Offset="0.0" />
+                        </LinearGradientBrush>
+                    </Polyline.Fill>
+                </Polyline>
+            </Button>
+            <Button x:Name="ButtonPositionUp"
+                    ToolTipService.ToolTip="順位を上げる">
+                <Polyline StrokeThickness="0"
+                          Points="9.5,0 2,8 6,8 6,16 12,16 12,8 17,8">
+                    <Polyline.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="DarkCyan" Offset="0.0" />
+                            <GradientStop Color="Cyan" Offset="0.9" />
+                        </LinearGradientBrush>
+                    </Polyline.Fill>
+                </Polyline>
+            </Button>
+            <Button x:Name="ButtonPositionDown"
+                    ToolTipService.ToolTip="順位を下げる"
+                    Margin="0 0 5 0">
+                <Polyline StrokeThickness="0"
+                          Points="6,0 6,9 2,9 9.5,16 17,9 13,9 13,0">
+                    <Polyline.Fill>
+                        <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                            <GradientStop Color="DarkCyan" Offset="0.0" />
+                            <GradientStop Color="Cyan" Offset="0.9" />
+                        </LinearGradientBrush>
+                    </Polyline.Fill>
+                </Polyline>
+            </Button>
+            <ToggleButton x:Name="ButtonCanvas"
+                          ToolTipService.ToolTip="選択モード"
+                          IsChecked="{Binding Path=FigureButtonState, ConverterParameter=Select, Mode=TwoWay, Converter={StaticResource enumConverter}}">
+                <Polyline Stroke="Black"
+                          Points="3.5,2 3.5,17 8,13 11,19 13,17.7 10,11.8 16,11 3.5,2"
+                          Fill="White"/>
+            </ToggleButton>
+            <ToggleButton x:Name="ButtonRect"
+                          ToolTipService.ToolTip="矩形を追加"
+                          IsChecked="{Binding Path=FigureButtonState, ConverterParameter=Rectangle, Mode=TwoWay, Converter={StaticResource enumConverter}}">
+                <Rectangle Margin="1" Width="18" Height="13"
+                           Stroke="Black"
+                           StrokeThickness="1.5">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="Azure" Offset="0.0" />
+                            <GradientStop Color="Blue" Offset="2.5" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </ToggleButton>
+            <ToggleButton x:Name="ButtonRoundedRect"
+                          ToolTipService.ToolTip="角丸矩形を追加"
+                          IsChecked="{Binding Path=FigureButtonState, ConverterParameter=RoundedRect, Mode=TwoWay, Converter={StaticResource enumConverter}}">
+                <Rectangle Margin="1" Width="18" Height="13"
+                           Stroke="Black"
+                           StrokeThickness="1.5"
+                           RadiusX="4.5" RadiusY="4.5">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush>
+                            <GradientStop Color="Azure" Offset="0.0" />
+                            <GradientStop Color="Red" Offset="2.5" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </ToggleButton>
+            <ToggleButton x:Name="ButtonEllipse"
+                          ToolTipService.ToolTip="楕円を追加"
+                          IsChecked="{Binding Path=FigureButtonState, ConverterParameter=Ellipse, Mode=TwoWay, Converter={StaticResource enumConverter}}">
+                <Ellipse Margin="1" Width="18" Height="13"
+                         Stroke="Black"
+                         StrokeThickness="1.5">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="Azure" Offset="0.0" />
+                            <GradientStop Color="LimeGreen" Offset="2.5" />
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </ToggleButton>
+            <ToggleButton x:Name="ButtonLine"
+                          ToolTipService.ToolTip="リンクを追加"
+                          IsChecked="{Binding Path=FigureButtonState, ConverterParameter=Line, Mode=TwoWay, Converter={StaticResource enumConverter}}">
+                <Canvas Width="20" Height="20">
+                    <Canvas.Children>
+                        <Line Stroke="Black" X1="4" Y1="4" X2="16" Y2="16" />
+                        <Ellipse Fill="Black" Canvas.Left="2" Canvas.Top="2" Width="4" Height="4" />
+                        <Ellipse Fill="Black" Canvas.Left="15" Canvas.Top="15" Width="4" Height="4" />
+                    </Canvas.Children>
+                </Canvas>
+            </ToggleButton>
+            <ToggleButton x:Name="ButtonPolyline"
+                          Visibility="Collapsed"
+                          ToolTipService.ToolTip="曲げられるリンクを追加"
+                          IsChecked="{Binding Path=FigureButtonState, ConverterParameter=Polyline, Mode=TwoWay, Converter={StaticResource enumConverter}}">
+                <Canvas Width="20" Height="20">
+                    <Canvas.Children>
+                        <Polyline Stroke="Black" Points ="4,4 12,8 16,16" />
+                        <Ellipse Fill="Black" Canvas.Left="2" Canvas.Top="2" Width="4" Height="4" />
+                        <Ellipse Fill="Black" Canvas.Left="10" Canvas.Top="6" Width="4" Height="4" />
+                        <Ellipse Fill="Black" Canvas.Left="15" Canvas.Top="15" Width="4" Height="4" />
+                    </Canvas.Children>
+                </Canvas>
+            </ToggleButton>
+            <Slider x:Name="NetViewZoomer"
+                    Width="100"
+                    Maximum="20"
+                    Minimum="1"
+                    Value="10"/>
+            <TextBlock x:Name="ZoomValue" Height="15" Text="100%" Margin="0 0 10 0"/>
+            <Button x:Name="ButtonSwichFullScreen"
+                    ToolTipService.ToolTip="フルスクリーン設定/解除">
+                <Rectangle Margin="1" Width="18" Height="13">
+                    <Rectangle.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="Cyan" Offset="0" />
+                            <GradientStop Color="DarkBlue" Offset="2.7" />
+                        </RadialGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Button>
+            <Button x:Name="ButtonDetach"
+                    Margin="5 0 0 0"
+                    ToolTipService.ToolTip="デスクトップにインストール">
+                <Polyline Stroke="DarkGreen" 
+                          StrokeThickness="0.7"
+                          Points="2,7.5 9,15 9,11 17,11 17,5 9,5 9,0">
+                    <Polyline.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="LightGreen" Offset="0.9" />
+                            <GradientStop Color="Green" Offset="0.0" />
+                        </LinearGradientBrush>
+                    </Polyline.Fill>
+                </Polyline>
+            </Button>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*" MinWidth="100"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="0.7*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.7*"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="25" />
+                </Grid.RowDefinitions>
+                <iedit:OutlineView x:Name="outlineView"
+                                   Grid.Row="0"
+                                   Background="Linen"
+                                   ItemTemplate="{StaticResource OutlienViewTemplate}"
+                                   SelectedItemChanged="OutlineView_SelectedItemChanged"
+                                   />
+                <swc:GridSplitter RenderTransformOrigin="0.5,0.5"
+                                  HorizontalAlignment="Stretch"
+                                  Margin="0,0,0,0" Grid.Row="1" />
+                <ScrollViewer Grid.Row="2"
+                          VerticalAlignment="Top"
+                          HorizontalAlignment="Left"
+                          VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Auto">
+                    <Grid Grid.Row="2">
+                        <iedit:NodePropertyPage 
+                                        x:Name="nodePropertyPage"/>
+                        <iedit:EdgePropertyPage
+                            Visibility="Collapsed"            
+                            x:Name="edgePropertyPage"/>
+                    </Grid>
+                </ScrollViewer>
+                <StackPanel x:Name="StatusBar" Grid.Row="3" Background="Lavender" Orientation="Horizontal">
+                    <Canvas Width="22" Height="22">
+                        <Ellipse x:Name="NetworkIndicator"
+                                 Margin="1" Width="18" Height="18" Stroke="Gray" StrokeThickness="0.5">
+                        </Ellipse>
+                    </Canvas>
+                    <TextBlock x:Name="NetworkStatus"
+                               VerticalAlignment="Center" Margin="4" HorizontalAlignment="Left"
+                               Text="{Binding Mode=OneWay, Path=NetworkAvailabilityStatus}" />
+                    <TextBlock x:Name="OutofBrowserStatus"
+                               VerticalAlignment="Center" Margin="4" HorizontalAlignment="Left"
+                               Text="{Binding Mode=OneWay, Path=RunningModeMessage}" />
+                    <TextBlock x:Name="InstallStatus"
+                               VerticalAlignment="Center" Margin="4" HorizontalAlignment="Left"
+                               Text="{Binding Mode=OneWay, Path=InstallStateMessage}" />
+                </StackPanel>
+            </Grid>
+            <swc:GridSplitter RenderTransformOrigin="0.5,0.5"
+                              HorizontalAlignment="Stretch"
+                              Margin="0,0,0,0"
+                              Grid.Column="1"/>
+            <ScrollViewer x:Name="NetViewScroller"
+                          Grid.Column="2"
+                          Background="LightBlue"
+                          VerticalAlignment="Top"
+                          HorizontalAlignment="Left"
+                          VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Auto">
+                <!-- NetViewと同一Colorにすると違和感が減るので -->
+                <iedit:NetView x:Name="netView" Background="LightBlue"
+                                   Width="600" Height="600">
+                    <iedit:NetView.CacheMode>
+                        <BitmapCache />
+                    </iedit:NetView.CacheMode>
+                </iedit:NetView>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="iEditSL.App" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAEAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.iEditDocument" Collapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Document.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.Document" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBIwkKAAFABwAKgCIEAAAAQggABAADAAQCBSABBAQAA=</HashCode>
+      <FileName>Document.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="iEditSL.EdgePropertyPage" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EdgePropertyPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.EnumConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EnumConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="iEditSL.NetView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAIUAwACAAAACAjgAAAAAAAAAAAAACAAQgAAAAA=</HashCode>
+      <FileName>NetView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="iEditSL.NodePropertyPage" Collapsed="true">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NodePropertyPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.OOBStats" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAADACAAgABgACAAgAAAAAgAAAACAAoAAAAAAEABA=</HashCode>
+      <FileName>OOBStats.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="iEditSL.OutlineView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAAAABAABBAAAAAAAACAACAAAAAABAAAQEAAA=</HashCode>
+      <FileName>OutlineView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="iEditSL.OutlineViewItem" Collapsed="true">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>OutlineViewItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.Page" Collapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIABAAgAAAAIAAMEBBgAEQAAJSAKAAA=</HashCode>
+      <FileName>Page.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.Entities.Edge" Collapsed="true">
+    <Position X="2.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABIQAQAIABAhIAAgAAIACAIAAAIiAAABBAAAAAAAAA=</HashCode>
+      <FileName>Entities\Edge.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.Entities.Element" Collapsed="true">
+    <Position X="1.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAKIAQQBADDEgAAIABIAEQAgBIIAAiADAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Element.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="iEditSL.Entities.Node" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAQACCDAAAAAEAAIQAAQECAIAAIABAQAgAAAAAI=</HashCode>
+      <FileName>Entities\Node.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.Figures.FigureBase" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EoUIAAAAACAAAAAwAAACAAAAAACAAIDBAAAAIAgAAAA=</HashCode>
+      <FileName>Figures\FigureBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.Figures.FigureLine" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAABAAAAAAACAAABACCAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Figures\FigureLine.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.Figures.FigureLineBase" Collapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBAQAAAABABAAAjAAACAQQRASCAiQgAAEAAACAAAAA=</HashCode>
+      <FileName>Figures\FigureLineBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.Figures.FigurePolyline" Collapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIABABAAAAAAAAAAABACAAAQgAAAAAAAAAAAQ=</HashCode>
+      <FileName>Figures\FigurePolyline.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.Figures.FigureRectangle" Collapsed="true">
+    <Position X="0.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAgAAAAABAAACAgAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Figures\FigureRectangle.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.Figures.FigureRectangleBase" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIAgAAAAAgAAAQIgAIACAAAAAACAAQAgIAAAgAAEAAA=</HashCode>
+      <FileName>Figures\FigureRectangleBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.Utilities.BindingFunctions" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Utilities\BindingFuntions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iEditSL.Utilities.ToolButtonState" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAEAAgABAAAEAQAAAAAAAAAA=</HashCode>
+      <FileName>Utilities\ToolButtonState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="iEditSL.IView" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IView.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="iEditSL.Entities.ArrowOrientations" Collapsed="true">
+    <Position X="7.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAgAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Entities\Edge.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="iEditSL.Entities.ArrowTypes" Collapsed="true">
+    <Position X="9.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAACAAAAAAAAAAAAAAIAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Entities\Edge.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="iEditSL.Entities.LineTypes" Collapsed="true">
+    <Position X="7.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Element.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="iEditSL.Entities.FigureTypes" Collapsed="true">
+    <Position X="13" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAACAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Node.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="iEditSL.Utilities.FigureButtonStates" Collapsed="true">
+    <Position X="11.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAACAAAAAAAAAAACAAAAAAAgAAAAAAAAQAABAAA=</HashCode>
+      <FileName>Utilities\ToolButtonState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="メイリオ" Size="9" />
+</ClassDiagram>

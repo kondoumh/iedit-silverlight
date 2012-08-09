@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="iEditSL.EdgePropertyPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:iedit="clr-namespace:iEditSL"
+    Width="220" Height="120">
+    <UserControl.Resources>
+        <iedit:EnumConverter x:Key="enumConverter"/>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="Azure">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0"
+                       Margin="5"
+                       VerticalAlignment="Center"
+                       Text="名前" />
+            <TextBlock Grid.Column="0" Grid.Row="1"
+                       Margin="5"
+                       VerticalAlignment="Center"
+                       Text="矢印の方向" />
+            <TextBox Grid.Column="1" Grid.Row="0"
+                     x:Name="TBName"
+                     Text="{Binding Path=Name, Mode=TwoWay}"
+                     Margin="5"
+                     Width="110"
+                     HorizontalAlignment="Left" VerticalAlignment="Top" />
+            <ComboBox Grid.Column="1" Grid.Row="1"
+                      x:Name="ComboOrientation"
+                      SelectedIndex="0">
+                <ComboBox.Items>
+                    <ComboBoxItem x:Name="ItemNone"
+                                  IsSelected="{Binding Path=ArrowOrientation, ConverterParameter=None, Mode=TwoWay, Converter={StaticResource enumConverter}}">
+                        <StackPanel Orientation="Horizontal">
+                            <Canvas Width="40" Height="20">
+                                <Line Stroke="Black"
+                                      X1="0" Y1="10" X2="40" Y2="10" /> 
+                            </Canvas>
+                            <TextBlock Margin="10 0 0 0">なし</TextBlock>
+                        </StackPanel>
+                    </ComboBoxItem>
+                    <ComboBoxItem x:Name="ItemOneWay"
+                                  IsSelected="{Binding Path=ArrowOrientation, ConverterParameter=OneWay, Mode=TwoWay, Converter={StaticResource enumConverter}}">
+                        <StackPanel Orientation="Horizontal">
+                            <Canvas Width="40" Height="20">
+                                <Line Stroke="Black"
+                                      X1="0" Y1="10" X2="40" Y2="10" />
+                                <Polygon Fill="Black" Points="40,10 32,5 32,15" />
+                            </Canvas>
+                            <TextBlock Margin="10 0 0 0">片方</TextBlock>
+                        </StackPanel>
+                    </ComboBoxItem>
+                    <ComboBoxItem x:Name="ItemTwoWay"
+                                  IsSelected="{Binding Path=ArrowOrientation, ConverterParameter=TwoWay, Mode=TwoWay, Converter={StaticResource enumConverter}}">
+                        <StackPanel Orientation="Horizontal">
+                            <Canvas Width="40" Height="20">
+                                <Line Stroke="Black"
+                                      X1="0" Y1="10" X2="40" Y2="10" />
+                                <Polygon Fill="Black" Points="40,10 32,5 32,15" />
+                                <Polygon Fill="Black" Points="0,10 8,5 8,15" />
+                            </Canvas>
+                            <TextBlock Margin="10 0 0 0">両方</TextBlock>
+                        </StackPanel>
+                    </ComboBoxItem>
+                </ComboBox.Items>
+            </ComboBox>
+            <TextBlock Grid.Column="0" Grid.Row="2"
+                       Margin="5"
+                       VerticalAlignment="Center"
+                       Text="From" />
+            <TextBlock Grid.Column="1" Grid.Row="2"
+                       Margin="5"
+                       VerticalAlignment="Center"
+                       Text="{Binding Path=AssociationFrom.Name}" />
+            <TextBlock Grid.Column="0" Grid.Row="3"
+                       Margin="5"
+                       VerticalAlignment="Center"
+                       Text="To" />
+            <TextBlock Grid.Column="1" Grid.Row="3"
+                       Margin="5"
+                       VerticalAlignment="Center"
+                       Text="{Binding Path=AssociationTo.Name}" />
+        </Grid>
+    </Grid>
+</UserControl>

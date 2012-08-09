@@ -1,0 +1,49 @@
+﻿<iedit:FigureRectangleBase x:Class="iEditSL.Figures.FigureRectangle"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:iedit="clr-namespace:iEditSL.Figures"
+    Width="{Binding Width, Mode=TwoWay}" Height="{Binding Height, Mode=TwoWay}"
+    Canvas.Left="{Binding Left, Mode=TwoWay}" Canvas.Top="{Binding Top, Mode=TwoWay}"
+    >
+    <Grid x:Name="LayoutRoot">
+        <Rectangle x:Name="ShapeRectangle" Stroke="Black" Visibility="Visible">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" Opacity="0.7">
+                    <GradientStop Color="Azure" Offset="0.0" />
+                    <GradientStop Color="Blue" Offset="2.5" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="ShapeRoundedRect" Stroke="Black"
+                   RadiusX="15" RadiusY="15" Visibility="Collapsed">
+            <Rectangle.Fill>
+                <LinearGradientBrush Opacity="0.7">
+                    <GradientStop Color="Azure" Offset="0.0" />
+                    <GradientStop Color="Red" Offset="2.5" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Ellipse x:Name="ShapeEllipse" Stroke="Black" Visibility="Collapsed">
+            <Ellipse.Fill>
+                <RadialGradientBrush Opacity="0.7">
+                    <GradientStop Color="Azure" Offset="0.0" />
+                    <GradientStop Color="LimeGreen" Offset="2.5" />
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <TextBlock x:Name="NameLabel"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Text="{Binding Name}" />
+        <Canvas x:Name="Tracker" Visibility="Collapsed">
+            <Rectangle x:Name="tr1" Fill="Black" Canvas.Left="-2.5" Canvas.Top="-2.5" Width="5" Height="5" />
+            <Rectangle x:Name="tr2" Fill="Black" Canvas.Left="37.5" Canvas.Top="-2.5" Width="5" Height="5" />
+            <Rectangle x:Name="tr3" Fill="Black" Canvas.Left="77.5" Canvas.Top="-2.5" Width="5" Height="5" />
+            <Rectangle x:Name="tr4" Fill="Black" Canvas.Left="77.5" Canvas.Top="17.5" Width="5" Height="5" />
+            <Rectangle x:Name="tr5" Fill="Black" Canvas.Left="77.5" Canvas.Top="37.5" Width="5" Height="5" />
+            <Rectangle x:Name="tr6" Fill="Black" Canvas.Left="37.5" Canvas.Top="37.5" Width="5" Height="5" />
+            <Rectangle x:Name="tr7" Fill="Black" Canvas.Left="-2.5" Canvas.Top="37.5" Width="5" Height="5" />
+            <Rectangle x:Name="tr8" Fill="Black" Canvas.Left="-2.5" Canvas.Top="17.5" Width="5" Height="5" />
+        </Canvas>
+    </Grid>
+</iedit:FigureRectangleBase>

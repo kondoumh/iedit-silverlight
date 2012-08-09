@@ -1,0 +1,12 @@
+<OutOfBrowserSettings ShortName="iEditSL アプリケーション" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>デスクトップの iEditSL アプリケーションを、自宅でも、職場でも、外出先でも利用できます。</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="iEditSL アプリケーション" Height="600" Width="800" />
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.Icons>
+    <Icon Size="16,16">Images/ieditsl16.png</Icon>
+    <Icon Size="32,32">Images/ieditsl32.png</Icon>
+    <Icon Size="48,48">Images/ieditsl48.png</Icon>
+    <Icon Size="128,128">Images/ieditsl128.png</Icon>
+  </OutOfBrowserSettings.Icons>
+</OutOfBrowserSettings>

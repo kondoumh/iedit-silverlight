@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iEditSL", "iEditSL\iEditSL.csproj", "{B4BDAA6F-C449-4B12-A244-8E4CA22B4F99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iEditSL.Web", "iEditSL.Web\iEditSL.Web.csproj", "{A5DDF469-28AF-4381-959C-C489319C0779}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B4BDAA6F-C449-4B12-A244-8E4CA22B4F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4BDAA6F-C449-4B12-A244-8E4CA22B4F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4BDAA6F-C449-4B12-A244-8E4CA22B4F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4BDAA6F-C449-4B12-A244-8E4CA22B4F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5DDF469-28AF-4381-959C-C489319C0779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5DDF469-28AF-4381-959C-C489319C0779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5DDF469-28AF-4381-959C-C489319C0779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5DDF469-28AF-4381-959C-C489319C0779}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
