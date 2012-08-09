@@ -311,6 +311,9 @@ namespace iEditSL
             }
         }
 
+        /// <summary>
+        /// エッジの選択状態を更新する
+        /// </summary>
         public void UpdateEdgeSelection()
         {
             foreach (var edge in Edges)
