@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iEditSL", "iEditSL\iEditSL.csproj", "{B4BDAA6F-C449-4B12-A244-8E4CA22B4F99}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iEditSL.Web", "iEditSL.Web\iEditSL.Web.csproj", "{A5DDF469-28AF-4381-959C-C489319C0779}"
